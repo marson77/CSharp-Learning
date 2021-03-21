@@ -20,6 +20,8 @@ namespace addressbook_web_tests
             s3.Size = 15;
 
             Assert.AreEqual(s1.Size, 15);
+
+            s2.Colored = true;
         }
 
         // или можно так
@@ -46,6 +48,10 @@ namespace addressbook_web_tests
             s3.Radius = 15;
 
             Assert.AreEqual(s1.Radius, 15);
+
+            s2.Colored = true;
+
+            //Assert.AreEqual(s2.Colored, 0000x1);
         }
     }
 }
