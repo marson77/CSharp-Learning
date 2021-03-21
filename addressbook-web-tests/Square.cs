@@ -18,7 +18,8 @@ namespace addressbook_web_tests
         //}
         
         private int size;
-        
+        private bool colored = false;
+
         public Square(int size)
         {
             this.size = size;
@@ -45,6 +46,17 @@ namespace addressbook_web_tests
             //    fSize = size;
             //}
         }
-    }
 
+        public bool Colored
+        {
+            get
+            {
+                return colored;
+            }
+            set
+            {
+                colored = value;
+            }
+        }
+    }
 }

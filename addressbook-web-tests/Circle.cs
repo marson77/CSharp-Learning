@@ -9,6 +9,7 @@ namespace addressbook_web_tests
     class Circle
     {
         private int radius;
+        private bool colored = false;
 
         public Circle(int radius)
         {
@@ -23,6 +24,18 @@ namespace addressbook_web_tests
             set
             {
                 radius = value;
+            }
+        }
+
+        public bool Colored
+        {
+            get
+            {
+                return colored;
+            }
+            set
+            {
+                colored = value;
             }
         }
     }
