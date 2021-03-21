@@ -14,6 +14,13 @@ namespace addressbook_web_tests
         {
             this.name = name;
         }
+// Добавляем 2 конструктор, для ввода значений (1ый не удаляем, для обратной совместимости и чтобы не сломался старый код)
+        public GroupData(string name, string header, string footer)
+        {
+            this.name = name;
+            this.header = header;
+            this.footer = footer;
+        }
 
         public string Name
         {

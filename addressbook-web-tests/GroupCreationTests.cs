@@ -46,7 +46,7 @@ namespace addressbook_web_tests
             Login(new AccountData("admin", "secret"));
             GoToGroupPage();
             InitGroupCreation();
-            FillGroupForm(new GroupData("Test"));
+            FillGroupForm(new GroupData("Test", "Test", "Test"));
             SubmitGroupCreation();
             ReturnToGroupPage();
             UnLogin();
