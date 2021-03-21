@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace addressbook_web_tests
 {
-    class Square
+    class Square : Figure
     {
         //если не назначить размер, по умолчанию будет size = 0;
         // или можно так:
@@ -18,7 +18,6 @@ namespace addressbook_web_tests
         //}
         
         private int size;
-        private bool colored = false;
 
         public Square(int size)
         {
@@ -45,18 +44,6 @@ namespace addressbook_web_tests
             //public void setSize(int size) {
             //    fSize = size;
             //}
-        }
-
-        public bool Colored
-        {
-            get
-            {
-                return colored;
-            }
-            set
-            {
-                colored = value;
-            }
         }
     }
 }
