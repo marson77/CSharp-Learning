@@ -52,7 +52,7 @@ namespace addressbook_web_tests
             FillGroupForm(group);
             SubmitGroupCreation();
             ReturnToGroupPage();
-            UnLogin();
+            LogOut();
         }
 
         private void UnLogin()
