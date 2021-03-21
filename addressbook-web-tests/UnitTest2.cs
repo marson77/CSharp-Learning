@@ -4,10 +4,10 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
-namespace addressbook_web_marstests
+namespace addressbook_web_tests
 {
     [TestFixture]
     public class UntitledTestCase
@@ -20,8 +20,8 @@ namespace addressbook_web_marstests
         [SetUp]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
-            baseURL = "http://localhost/addressbook/";
+            driver = new ChromeDriver();
+            baseURL = "http://localhost/addressbook";
             verificationErrors = new StringBuilder();
         }
 
@@ -42,7 +42,7 @@ namespace addressbook_web_marstests
         [Test]
         public void TheUntitledTestCaseTest()
         {
-            driver.Navigate().GoToUrl("baseURL");
+            driver.Navigate().GoToUrl(baseURL);
             driver.FindElement(By.XPath("//body")).Click();
             driver.FindElement(By.Name("user")).Click();
             driver.FindElement(By.Name("user")).Clear();
