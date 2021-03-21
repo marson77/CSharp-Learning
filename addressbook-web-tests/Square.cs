@@ -26,23 +26,25 @@ namespace addressbook_web_tests
 
         public int Size
         {
-            get
-            {
-                return size;
-            }
-            set
-            {
-                size = value;
-            }
-        //Или можно так2
-        //}
-        //public int getSize()
-        //{
-        //    return fSize;
-        //}
-        //
-        //public void setSize(int size) {
-        //    fSize = size;
-        //}
+        get
+        {
+            return size;
+        }
+        set
+        {
+            size = value;
+        }
+            //Или можно так2
+            //}
+            //public int getSize()
+            //{
+            //    return fSize;
+            //}
+            //
+            //public void setSize(int size) {
+            //    fSize = size;
+            //}
+        }
     }
+
 }
