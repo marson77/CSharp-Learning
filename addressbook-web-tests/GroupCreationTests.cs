@@ -55,7 +55,7 @@ namespace addressbook_web_tests
             LogOut();
         }
 
-        private void UnLogin()
+        private void LogOut()
         {
             driver.FindElement(By.LinkText("Logout")).Click();
         }

@@ -80,9 +80,7 @@ namespace addressbook_web_tests
             driver.FindElement(By.Name("nickname")).Click();
             driver.FindElement(By.Name("nickname")).Clear();
             driver.FindElement(By.Name("nickname")).SendKeys("Laime");
-            driver.FindElement(By.Name("photo")).Click();
-            driver.FindElement(By.Name("photo")).Clear();
-            driver.FindElement(By.Name("photo")).SendKeys("C:\\fakepath\\0_xMaFF2hSXpf_kIfG.jpg");
+            driver.FindElement(By.XPath("(//input[@name='photo'])")).SendKeys("C:\\temp\\0_xMaFF2hSXpf_kIfG.jpg");
             driver.FindElement(By.Name("title")).Click();
             driver.FindElement(By.Name("title")).Clear();
             driver.FindElement(By.Name("title")).SendKeys("New contact");
