@@ -45,7 +45,10 @@ namespace addressbook_web_tests
             OpenHomepage();
             Login(new AccountData("admin", "secret"));
             GoToContactAddPage();
-            FillGroupForm();
+            ContactData contact = new ContactData("Maks");
+            contact.Middlename = "Korj";
+            contact.Lastname = "Kripovyi";
+            FillGroupForm(contact);
             SubmitContactAdding();
             ReturnToGroupPage();
             LogOut();
@@ -66,17 +69,17 @@ namespace addressbook_web_tests
             driver.FindElement(By.XPath("(//input[@name='submit'])[2]")).Click();
         }
 
-        private void FillGroupForm()
+        private void FillGroupForm(ContactData contact)
         {
             driver.FindElement(By.Name("firstname")).Click();
             driver.FindElement(By.Name("firstname")).Clear();
-            driver.FindElement(By.Name("firstname")).SendKeys("Maks");
+            driver.FindElement(By.Name("firstname")).SendKeys(contact.Firstname);
             driver.FindElement(By.Name("middlename")).Click();
             driver.FindElement(By.Name("middlename")).Clear();
-            driver.FindElement(By.Name("middlename")).SendKeys("Korge");
+            driver.FindElement(By.Name("middlename")).SendKeys(contact.Middlename);
             driver.FindElement(By.Name("lastname")).Click();
             driver.FindElement(By.Name("lastname")).Clear();
-            driver.FindElement(By.Name("lastname")).SendKeys("King");
+            driver.FindElement(By.Name("lastname")).SendKeys(contact.Lastname);
             driver.FindElement(By.Name("nickname")).Click();
             driver.FindElement(By.Name("nickname")).Clear();
             driver.FindElement(By.Name("nickname")).SendKeys("Laime");
@@ -134,7 +137,7 @@ namespace addressbook_web_tests
             driver.FindElement(By.Name("ayear")).Clear();
             driver.FindElement(By.Name("ayear")).SendKeys("2521");
             driver.FindElement(By.Name("new_group")).Click();
-            new SelectElement(driver.FindElement(By.Name("new_group"))).SelectByText("Test");
+            new SelectElement(driver.FindElement(By.Name("new_group"))).SelectByText("Test1");
             driver.FindElement(By.Name("new_group")).Click();
             driver.FindElement(By.Name("address2")).Click();
             driver.FindElement(By.Name("address2")).Clear();
