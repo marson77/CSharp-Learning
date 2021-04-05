@@ -3,42 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
 namespace addressbook_web_tests
 {
-
-    public class TestBase
+    class ApplicationManager
     {
         protected IWebDriver driver;
-        private StringBuilder verificationErrors;
         protected string baseURL;
-        private bool acceptNextAlert = true;
 
         protected LoginHelper loginHelper;
         protected NavigationHelper navigator;
         protected GroupsHelper groupsHelper;
         protected LogoutHelper logoutHelper;
 
-        [SetUp]
-        public void SetupTest()
+        public ApplicationManager()
         {
             driver = new FirefoxDriver();
             baseURL = "http://localhost";
-            verificationErrors = new StringBuilder();
 
             loginHelper = new LoginHelper(driver);
             navigator = new NavigationHelper(driver, baseURL);
             groupsHelper = new GroupsHelper(driver);
             logoutHelper = new LogoutHelper(driver);
-
         }
 
-        [TearDown]
-        public void TeardownTest()
+        public void Stop()
         {
             try
             {
@@ -48,8 +40,40 @@ namespace addressbook_web_tests
             {
                 // Ignore errors if unable to close the browser
             }
-            Assert.AreEqual("", verificationErrors.ToString());
         }
 
+        public LoginHelper Auth
+        {
+            get
+            {
+                return loginHelper;
+            }
+        }
+
+        public NavigationHelper Navigator
+        {
+            get
+            {
+                return navigator;
+            }
+
+        }
+
+        public GroupsHelper Groups
+        {
+            get
+            {
+                return groupsHelper;
+            }
+        }
+
+        public LogoutHelper Logout
+        {
+            get
+            {
+                return logoutHelper;
+            }
+
+        }
     }
 }
