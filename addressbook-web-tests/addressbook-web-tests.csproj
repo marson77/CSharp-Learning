@@ -81,6 +81,10 @@
     <Compile Include="Figure.cs" />
     <Compile Include="GroupData.cs" />
     <Compile Include="GroupRemoving.cs" />
+    <Compile Include="GroupsHelper.cs" />
+    <Compile Include="LoginHelper.cs" />
+    <Compile Include="LogoutHelper.cs" />
+    <Compile Include="NavigationHelper.cs" />
     <Compile Include="Square.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="UnitTest1.cs" />
