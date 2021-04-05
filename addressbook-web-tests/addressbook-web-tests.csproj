@@ -82,6 +82,7 @@
     <Compile Include="GroupData.cs" />
     <Compile Include="GroupRemoving.cs" />
     <Compile Include="GroupsHelper.cs" />
+    <Compile Include="HelperBase.cs" />
     <Compile Include="LoginHelper.cs" />
     <Compile Include="LogoutHelper.cs" />
     <Compile Include="NavigationHelper.cs" />

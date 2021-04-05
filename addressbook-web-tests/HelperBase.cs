@@ -10,19 +10,13 @@ using OpenQA.Selenium.Support.UI;
 
 namespace addressbook_web_tests
 {
-    public class LogoutHelper : HelperBase
+    public class HelperBase
     {
+        protected IWebDriver driver;
 
-        private IWebDriver driver;
-
-        public LogoutHelper(IWebDriver driver) : base(driver)
+        public HelperBase(IWebDriver driver)
         {
-
-        }
-
-        public void LogOut()
-        {
-            driver.FindElement(By.LinkText("Logout")).Click();
+            this.driver = driver;
         }
     }
 }

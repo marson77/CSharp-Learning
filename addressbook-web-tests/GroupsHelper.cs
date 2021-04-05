@@ -10,14 +10,12 @@ using OpenQA.Selenium.Support.UI;
 
 namespace addressbook_web_tests
 {
-    public class GroupsHelper
+    public class GroupsHelper : HelperBase
     {
 
-        private IWebDriver driver;
-
-        public GroupsHelper(IWebDriver driver)
+        public GroupsHelper(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
+
         }
 
         public void InitGroupCreation()
