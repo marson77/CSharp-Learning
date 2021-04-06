@@ -13,9 +13,7 @@ namespace addressbook_web_tests
     public class LogoutHelper : HelperBase
     {
 
-        private IWebDriver driver;
-
-        public LogoutHelper(IWebDriver driver) : base(driver)
+        public LogoutHelper(IWebDriver driver): base(driver)
         {
 
         }

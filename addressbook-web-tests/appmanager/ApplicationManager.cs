@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace addressbook_web_tests
 {
-    class ApplicationManager
+    public class ApplicationManager
     {
         protected IWebDriver driver;
         protected string baseURL;
