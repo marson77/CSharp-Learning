@@ -13,7 +13,7 @@ namespace addressbook_web_tests
     public class LoginHelper : HelperBase
     {
 
-        public LoginHelper(IWebDriver driver): base(driver)
+        public LoginHelper(ApplicationManager manager): base(manager)
         {
 
         }
@@ -28,5 +28,6 @@ namespace addressbook_web_tests
             driver.FindElement(By.Name("pass")).SendKeys(account.Password);
             driver.FindElement(By.XPath("//input[@value='Login']")).Click();
         }
+
     }
 }
