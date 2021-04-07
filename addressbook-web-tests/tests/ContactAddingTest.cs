@@ -21,5 +21,18 @@ namespace addressbook_web_tests
             app.Contacts.Create(contact);
             app.Logout.LogOut();
         }
+
+        [Test]
+        public void EmptyContactCreatingTest()
+        {
+            ContactData contact = new ContactData("")
+            {
+                Middlename = "",
+                Lastname = ""
+            };
+
+            app.Contacts.Create(contact);
+            app.Logout.LogOut();
+        }
     }
 }
