@@ -52,6 +52,28 @@ namespace addressbook_web_tests
             s2.Colored = true;
 
             //Assert.AreEqual(s2.Colored, 0000x1);
+         }
+
+        //Лекция 3
+
+        [TestMethod]
+        public void If_then_else()
+        {
+            double total = 999;
+            //double total = 1500;
+            //bool vipClient = false;
+            bool vipClient = true;
+
+            //if (total > 1000 && vipClient) // должно выполниться 2 условия (&&) - и
+            if (total > 1000 || vipClient) // (||) - или
+            {
+                total = total * 0.9;
+                System.Console.Out.Write("Скидка 10%, общая сумма " + total);
+            }
+            else // при вышеописанном условии можно убрать блок else
+            {
+               System.Console.Out.Write("Скидки нет, общая сумма " + total);
+            }
         }
     }
 }
