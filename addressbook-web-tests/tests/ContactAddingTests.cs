@@ -7,10 +7,10 @@ using NUnit.Framework;
 namespace addressbook_web_tests
 {
     [TestFixture]
-    class ContactCreating : TestBase
+    class ContactAddingTests : TestBase
     {
         [Test]
-        public void TheContactCreatingTest()
+        public void ContactAddingTest()
         {
             ContactData contact = new ContactData("Maks")
             {
@@ -23,7 +23,7 @@ namespace addressbook_web_tests
         }
 
         [Test]
-        public void EmptyContactCreatingTest()
+        public void EmptyNameContactAddingTest()
         {
             ContactData contact = new ContactData("")
             {

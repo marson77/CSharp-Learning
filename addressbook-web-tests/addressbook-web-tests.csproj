@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="appmanager\ContactHelper.cs" />
+    <Compile Include="tests\ContactModificationTests.cs" />
     <Compile Include="tests\ContactRemovingTests.cs" />
     <Compile Include="tests\GroupModificationTests.cs" />
     <Compile Include="model\AccountData.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="tests\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\GroupCreationTests.cs" />
-    <Compile Include="tests\ContactAddingTest.cs" />
+    <Compile Include="tests\ContactAddingTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="diagramm\ClassDiagram1.cd" />
