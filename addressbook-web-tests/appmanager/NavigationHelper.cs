@@ -29,5 +29,14 @@ namespace addressbook_web_tests
             driver.FindElement(By.LinkText("groups")).Click();
         }
 
+        public void GoToContactAddPage()
+        {
+            driver.FindElement(By.LinkText("add new")).Click();
+        }
+
+        public void ReturnToHomePage()
+        {
+            driver.FindElement(By.LinkText("home")).Click();
+        }
     }
 }
