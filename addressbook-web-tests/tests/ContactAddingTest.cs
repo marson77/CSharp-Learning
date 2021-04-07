@@ -19,6 +19,7 @@ namespace addressbook_web_tests
             };
 
             app.Contacts.Create(contact);
+            app.Logout.LogOut();
         }
     }
 }
