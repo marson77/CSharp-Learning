@@ -19,7 +19,7 @@ namespace addressbook_web_tests
                 Lastname = "Namemodify3"
             };
 
-            app.Contacts.Modify(1, newData);
+            app.Contacts.Modify(newData);
             app.Logout.LogOut();
         }
     }

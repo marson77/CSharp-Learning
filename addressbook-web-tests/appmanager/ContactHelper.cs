@@ -28,9 +28,8 @@ namespace addressbook_web_tests
             return this;
         }
 
-        public ContactHelper Modify(int p, ContactData newData)
+        public ContactHelper Modify(ContactData newData)
         {
-            SelectContact(p);
             InitContactModification();
             FillmofificationContactForm(newData);
             SubmitContactModification();
