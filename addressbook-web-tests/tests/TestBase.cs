@@ -18,18 +18,7 @@ namespace addressbook_web_tests
         [SetUp]
         public void SetupTest()
         {
-            app = new ApplicationManager();
-
-            app.Navigator.GoToHomePage();
-            app.Auth.Login(new AccountData("admin", "secret"));
-
+            app = TestSuiteFixture.app;
         }
-
-        [TearDown]
-        public void TeardownTest()
-        {
-            app.Stop();
-        }
-
     }
 }
