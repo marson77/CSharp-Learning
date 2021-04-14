@@ -22,5 +22,18 @@ namespace addressbook_web_tests
             app.Groups.Modify(1, newData);
             app.Logout.LogOut();
         }
+
+        [Test]
+        public void GroupModificationTest2()
+        {
+            GroupData newData = new GroupData("Testmodify2")
+            {
+                Header = null,
+                Footer = null
+            };
+
+            app.Groups.Modify(1, newData);
+            app.Logout.LogOut();
+        }
     }
 }
