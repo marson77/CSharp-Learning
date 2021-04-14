@@ -66,16 +66,13 @@ namespace addressbook_web_tests
 
         private void Type(By locator, string text)
         {
-            if (text == null)
-            {
-
-            }
-            else
+            if (text != null) // == - сравнение, != - неравно
             {
                 driver.FindElement(locator).Click();
                 driver.FindElement(locator).Clear();
                 driver.FindElement(locator).SendKeys(text);
             }
+
         }
 
         public GroupsHelper SelectGroup(int index)
