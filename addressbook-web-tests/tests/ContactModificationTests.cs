@@ -22,5 +22,18 @@ namespace addressbook_web_tests
             app.Contacts.Modify(newData);
             app.Logout.LogOut();
         }
+
+        [Test]
+        public void ContactModificationTest2()
+        {
+            ContactData newData = new ContactData("Namemodify2")
+            {
+                Middlename = null,
+                Lastname = null
+            };
+
+            app.Contacts.Modify(newData);
+            app.Logout.LogOut();
+        }
     }
 }
