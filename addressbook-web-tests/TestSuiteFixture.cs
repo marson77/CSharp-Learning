@@ -15,7 +15,7 @@ namespace addressbook_web_tests
         [SetUp]
         public void InitApplicationManager()
         {
-            app = new ApplicationManager();
+            ApplicationManager app = ApplicationManager.GetInstance();
             app.Navigator.GoToHomePage();
             app.Auth.Login(new AccountData("admin", "secret"));
         }
@@ -23,7 +23,7 @@ namespace addressbook_web_tests
         [TearDown]
         public void StopApplicationManager()
         {
-            app.Stop();
+            ApplicationManager.GetInstance().Stop();
         }
     }
 }

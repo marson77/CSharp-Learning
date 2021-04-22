@@ -19,8 +19,9 @@ namespace addressbook_web_tests
         protected GroupsHelper groupsHelper;
         protected LogoutHelper logoutHelper;
         protected ContactHelper contactHelper;
+        private static ApplicationManager instance;
 
-        public ApplicationManager()
+        private ApplicationManager()
         {
             driver = new FirefoxDriver();
             baseURL = "http://localhost";
@@ -31,6 +32,17 @@ namespace addressbook_web_tests
             logoutHelper = new LogoutHelper(this);
             contactHelper = new ContactHelper(this);
         }
+
+        public static ApplicationManager GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new ApplicationManager();
+            }
+            return instance;
+        }
+
+
 
         public IWebDriver Driver
         {
