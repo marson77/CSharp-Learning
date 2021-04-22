@@ -34,6 +34,18 @@ namespace addressbook_web_tests
             contactHelper = new ContactHelper(this);
         }
 
+        public ~ApplicationManager() // Деструктор
+        {
+            try
+            {
+                driver.Quit();
+            }
+            catch (Exception)
+            {
+                // Ignore errors if unable to close the browser
+            }
+
+        }
         public static ApplicationManager GetInstance()
         {
             if (! app.IsValueCreated == null)
@@ -50,18 +62,6 @@ namespace addressbook_web_tests
             get
             {
                 return driver;
-            }
-        }
-
-        public void Stop()
-        {
-            try
-            {
-                driver.Quit();
-            }
-            catch (Exception)
-            {
-                // Ignore errors if unable to close the browser
             }
         }
 
