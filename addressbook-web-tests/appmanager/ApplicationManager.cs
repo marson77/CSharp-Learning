@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
@@ -19,7 +20,7 @@ namespace addressbook_web_tests
         protected GroupsHelper groupsHelper;
         protected LogoutHelper logoutHelper;
         protected ContactHelper contactHelper;
-        private static ApplicationManager instance;
+        private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
         private ApplicationManager()
         {
@@ -35,11 +36,11 @@ namespace addressbook_web_tests
 
         public static ApplicationManager GetInstance()
         {
-            if (instance == null)
+            if (! app.IsValueCreated == null)
             {
-                instance = new ApplicationManager();
+                app.Value = new ApplicationManager();
             }
-            return instance;
+            return app.Value;
         }
 
 
