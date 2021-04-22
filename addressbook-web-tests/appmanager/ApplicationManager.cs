@@ -34,7 +34,7 @@ namespace addressbook_web_tests
             contactHelper = new ContactHelper(this);
         }
 
-        public ~ApplicationManager() // Деструктор
+        ~ApplicationManager() // Деструктор
         {
             try
             {
@@ -46,11 +46,18 @@ namespace addressbook_web_tests
             }
 
         }
+
         public static ApplicationManager GetInstance()
         {
-            if (! app.IsValueCreated == null)
+#pragma warning disable CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
+            if (!app.IsValueCreated == null)
+#pragma warning restore CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
             {
-                app.Value = new ApplicationManager();
+                ApplicationManager newInstance = new ApplicationManager();
+                newInstance.Navigator.GoToHomePage();
+                app.Value = newInstance;
+
+                return app.Value;
             }
             return app.Value;
         }

@@ -29,7 +29,6 @@ namespace addressbook_web_tests
                 driver.FindElement(locator).Clear();
                 driver.FindElement(locator).SendKeys(text);
             }
-
         }
     }
 }
