@@ -36,15 +36,19 @@ namespace addressbook_web_tests
 
         public void Logout()
         {
-            driver.FindElement(By.LinkText("Logout")).Click();
+            if (IsLoggedIn())
+            {
+                driver.FindElement(By.LinkText("Logout")).Click();
+            }
+
         }
 
-        private bool IsLoggedIn()
+        public bool IsLoggedIn()
         {
             return IsElementPresent(By.Name("logout"));
         }
 
-        private bool IsLoggedIn(AccountData account)
+        public bool IsLoggedIn(AccountData account)
         {
             return IsLoggedIn()
                 && driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text
