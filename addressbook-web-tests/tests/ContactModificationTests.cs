@@ -20,7 +20,6 @@ namespace addressbook_web_tests
             };
 
             app.Contacts.Modify(newData);
-            app.Logout.LogOut();
         }
 
         [Test]
@@ -33,7 +32,6 @@ namespace addressbook_web_tests
             };
 
             app.Contacts.Modify(newData);
-            app.Logout.LogOut();
         }
     }
 }

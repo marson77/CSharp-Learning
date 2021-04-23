@@ -80,7 +80,7 @@ namespace addressbook_web_tests
             driver.FindElement(By.Name("amonth")).Click();
             Type(By.Name("ayear"), "2521");
             driver.FindElement(By.Name("new_group")).Click();
-            new SelectElement(driver.FindElement(By.Name("new_group"))).SelectByText("Test1");
+            new SelectElement(driver.FindElement(By.Name("new_group"))).SelectByText("Testmodify1");
             driver.FindElement(By.Name("new_group")).Click();
             Type(By.Name("address2"), "Here");
             driver.FindElement(By.Name("theform")).Click();

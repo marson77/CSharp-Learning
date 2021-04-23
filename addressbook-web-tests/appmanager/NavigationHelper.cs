@@ -30,12 +30,13 @@ namespace addressbook_web_tests
 
         public void GoToGroupPage()
         {
-            if (driver.Url == baseURL + "/addressbook/group.php"
+            if (driver.Url == baseURL + "/addressbook/group.php/"
                 && IsElementPresent(By.Name("new")))
             {
                 return;
             }
-            driver.FindElement(By.LinkText("groups")).Click();
+
+            driver.FindElement(By.XPath("//a[contains(text(),'groups')]")).Click();
         }
 
         public void GoToContactAddPage()

@@ -51,7 +51,7 @@ namespace addressbook_web_tests
         public bool IsLoggedIn(AccountData account)
         {
             return IsLoggedIn()
-                && driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text
+                && driver.FindElement(By.CssSelector("a")).FindElement(By.TagName("b")).Text
                     == "(" + account.Username + ")";
         }
     }

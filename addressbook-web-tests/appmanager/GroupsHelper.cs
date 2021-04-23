@@ -31,6 +31,7 @@ namespace addressbook_web_tests
 
         public GroupsHelper Modify(int p, GroupData newData)
         {
+
             manager.Navigator.GoToGroupPage();
             SelectGroup(p);
             InitGroupModification();
@@ -101,5 +102,7 @@ namespace addressbook_web_tests
             driver.FindElement(By.Name("update")).Click();
             return this;
         }
+
+
     }
  }

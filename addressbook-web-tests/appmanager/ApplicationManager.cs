@@ -49,9 +49,7 @@ namespace addressbook_web_tests
 
         public static ApplicationManager GetInstance()
         {
-#pragma warning disable CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
-            if (!app.IsValueCreated == null)
-#pragma warning restore CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
+            if (!app.IsValueCreated)
             {
                 ApplicationManager newInstance = new ApplicationManager();
                 newInstance.Navigator.GoToHomePage();

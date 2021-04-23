@@ -15,7 +15,6 @@ namespace addressbook_web_tests
         public void ContactRemovingTest()
         {
             app.Contacts.Remove(1);
-            app.Logout.LogOut();
         }
     }
 }
