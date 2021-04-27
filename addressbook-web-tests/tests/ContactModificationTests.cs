@@ -19,7 +19,15 @@ namespace addressbook_web_tests
                 Lastname = "Namemodify3"
             };
 
+            List<ContactData> oldContacts = app.Contacts.GetContactList();
+
             app.Contacts.ModifyContact(newData);
+
+            List<ContactData> newContacts = app.Contacts.GetContactList();
+            oldContacts[0].Firstname = newData.Firstname;
+            oldContacts.Sort();
+            newContacts.Sort();
+            Assert.AreEqual(oldContacts, newContacts);
         }
 
         [Test]

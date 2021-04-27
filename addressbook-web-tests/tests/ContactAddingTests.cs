@@ -24,7 +24,10 @@ namespace addressbook_web_tests
             app.Contacts.CreateContact(contact);
 
             List<ContactData> newContacts = app.Contacts.GetContactList();
-            Assert.AreEqual(oldContacts.Count + 1, newContacts.Count);
+            oldContacts.Add(contact);//к старому списку добавляем нововсозданную группу
+            oldContacts.Sort();
+            newContacts.Sort();
+            Assert.AreEqual(oldContacts, newContacts);
         }
 
         [Test]
@@ -41,7 +44,10 @@ namespace addressbook_web_tests
             app.Contacts.CreateContact(contact);
 
             List<ContactData> newContacts = app.Contacts.GetContactList();
-            Assert.AreEqual(oldContacts.Count + 1, newContacts.Count);
+            oldContacts.Add(contact);//к старому списку добавляем нововсозданную группу
+            oldContacts.Sort();
+            newContacts.Sort();
+            Assert.AreEqual(oldContacts, newContacts);
         }
     }
 }
