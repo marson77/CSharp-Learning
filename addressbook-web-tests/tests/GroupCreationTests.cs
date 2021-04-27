@@ -18,7 +18,7 @@ namespace addressbook_web_tests
                 Footer = "Test3"
             };
 
-            app.Groups.Create(group);
+            app.Groups.CreateGroup(group);
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace addressbook_web_tests
                 Footer = ""
             };
 
-            app.Groups.Create(group);
+            app.Groups.CreateGroup(group);
         }
     }
 }

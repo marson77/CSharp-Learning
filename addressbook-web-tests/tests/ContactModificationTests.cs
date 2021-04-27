@@ -19,7 +19,7 @@ namespace addressbook_web_tests
                 Lastname = "Namemodify3"
             };
 
-            app.Contacts.Modify(newData);
+            app.Contacts.ModifyContact(newData);
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace addressbook_web_tests
                 Lastname = null
             };
 
-            app.Contacts.Modify(newData);
+            app.Contacts.ModifyContact(newData);
         }
     }
 }

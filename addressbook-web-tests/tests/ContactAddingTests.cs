@@ -18,7 +18,7 @@ namespace addressbook_web_tests
                 Lastname = "Kripovyi"
             };
 
-            app.Contacts.Create(contact);
+            app.Contacts.CreateContact(contact);
         }
 
         [Test]
@@ -30,7 +30,7 @@ namespace addressbook_web_tests
                 Lastname = ""
             };
 
-            app.Contacts.Create(contact);
+            app.Contacts.CreateContact(contact);
         }
     }
 }

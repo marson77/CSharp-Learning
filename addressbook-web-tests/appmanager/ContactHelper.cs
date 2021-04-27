@@ -19,7 +19,7 @@ namespace addressbook_web_tests
 
         }
 
-        public ContactHelper Create(ContactData contact)
+        public ContactHelper CreateContact(ContactData contact)
         {
             manager.Navigator.GoToContactAddPage();
             FillContactForm(contact);
@@ -28,17 +28,19 @@ namespace addressbook_web_tests
             return this;
         }
 
-        public ContactHelper Modify(ContactData newData)
+        public ContactHelper ModifyContact(ContactData contact)
         {
+            FindContact(contact);
             InitContactModification();
-            FillmofificationContactForm(newData);
+            FillmofificationContactForm(contact);
             SubmitContactModification();
             manager.Navigator.ReturnToHomePage();
             return this;
         }
 
-        public ContactHelper Remove(int p)
+        public ContactHelper RemoveContact(int p, ContactData contact)
         {
+            FindContact(contact);
             SelectContact(p);
             RemoveContact();
             manager.Navigator.ReturnToHomePage();
@@ -87,6 +89,25 @@ namespace addressbook_web_tests
             Type(By.Name("phone2"), "Here");
             Type(By.Name("notes"), "Allright");
             return this;
+        }
+
+        public ContactHelper FindContact(ContactData contact)
+        {
+            if (ContactExist())
+            {
+                return this;
+            }
+
+            manager.Navigator.GoToContactAddPage();
+            FillContactForm(contact);
+            SubmitContactAdding();
+            manager.Navigator.ReturnToHomePage();
+            return this;
+        }
+
+        public bool ContactExist()
+        {
+            return IsElementPresent(By.Name("selected[]"));
         }
 
         public ContactHelper FillmofificationContactForm(ContactData contact)
