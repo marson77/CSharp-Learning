@@ -2,6 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace addressbook_web_tests
@@ -18,7 +19,12 @@ namespace addressbook_web_tests
                 Footer = "Test3"
             };
 
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
             app.Groups.CreateGroup(group);
+
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+            Assert.AreEqual(oldGroups.Count + 1, newGroups.Count);
         }
 
         [Test]
@@ -30,7 +36,29 @@ namespace addressbook_web_tests
                 Footer = ""
             };
 
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
             app.Groups.CreateGroup(group);
+
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+            Assert.AreEqual(oldGroups.Count + 1, newGroups.Count);
+        }
+
+        [Test]
+        public void BadNameGroupCreationTest()
+        {
+            GroupData group = new GroupData("a'a")
+            {
+                Header = "",
+                Footer = ""
+            };
+
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
+            app.Groups.CreateGroup(group);
+
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+            Assert.AreEqual(oldGroups.Count + 1, newGroups.Count);
         }
     }
 }

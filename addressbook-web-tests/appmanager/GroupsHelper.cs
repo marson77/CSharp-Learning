@@ -29,6 +29,18 @@ namespace addressbook_web_tests
             return this;
         }
 
+        public List<GroupData> GetGroupList()
+        {
+            List<GroupData> groups = new List<GroupData>(); // Создаем коллекцию, 
+            manager.Navigator.GoToGroupPage();
+            ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group")); // для кажого элемента в коллекции нужно выполнить какие то действия:
+            foreach (IWebElement element in elements) 
+            {
+                groups.Add(new GroupData(element.Text)); //текст который выидим на экране, 
+            }
+            return groups;
+        }
+
         public GroupsHelper ModifyGroup(int p, GroupData newData)
         {
 
