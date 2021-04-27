@@ -68,7 +68,7 @@ namespace addressbook_web_tests
             return Firstname == other.Firstname;
         }
 
-        public int GetHashCode()
+        public override int GetHashCode()
         {
             //return 0;//Если оптимизация сравнения не нужна
             return Firstname.GetHashCode();
@@ -87,7 +87,7 @@ namespace addressbook_web_tests
         //    return Middlename == other.Middlename;
         //}
 
-        //public int GetHashCode2()
+        //public override int GetHashCode2()
         //{
         //    //return 0;//Если оптимизация сравнения не нужна
         //    return Middlename.GetHashCode();
