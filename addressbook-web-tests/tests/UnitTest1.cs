@@ -75,5 +75,15 @@ namespace addressbook_web_tests
                System.Console.Out.Write("Скидки нет, общая сумма " + total);
             }
         }
+
+        [TestMethod]
+        public void TestMethod4()
+        {
+            for (int i = 0; i < 10; i = i + 1)
+            {
+                System.Console.Out.Write(i + "\n"); // Выводим значение счётчика на консоль (n  - перевод строки)
+            }
+        }
+
     }
 }
