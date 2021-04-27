@@ -1,5 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
 
 namespace addressbook_web_tests
 {
@@ -52,7 +58,7 @@ namespace addressbook_web_tests
             s2.Colored = true;
 
             //Assert.AreEqual(s2.Colored, 0000x1);
-         }
+        }
 
         //Лекция 3
 
@@ -72,12 +78,12 @@ namespace addressbook_web_tests
             }
             else // при вышеописанном условии можно убрать блок else
             {
-               System.Console.Out.Write("Скидки нет, общая сумма " + total);
+                System.Console.Out.Write("Скидки нет, общая сумма " + total);
             }
         }
 
         [TestMethod]
-        public void TestMethod4()
+        public void Cycle()
         {
             for (int i = 0; i < 10; i = i + 1)
             {
@@ -85,5 +91,56 @@ namespace addressbook_web_tests
             }
         }
 
+        [TestMethod] // для старых языков С, С++
+        public void Array()
+        {
+            //string s = "test";// обьявляется переменная представляющая собой 1 единственную строку
+            string[] d = new string[] { "I", "want", "to", "sleep!" }; //Создали массив
+
+            for (int i = 0; i < d.Length; i = i + 1) // цикл на повтороение столько раз, сколько элементов в массиве
+            {
+                System.Console.Out.Write(d[i] + "\n"); // Выводим значение счётчика на консоль (n  - перевод строки)
+            }
+        }
+
+        [TestMethod] // для C#
+        public void ArrayCSharp()
+        {
+            string[] d = new string[] { "I", "want", "to", "sleep!" }; //Создали массив для контейнеров
+
+            foreach (string element in d) // цикл на повтороение столько раз, сколько элементов в массиве
+            {
+                System.Console.Out.Write(element + "\n"); // Выводим значение счётчика на консоль (n  - перевод строки)
+            }
+        }
+
+        //[TestMethod] // для C# Ожидание появления какого то элемента на странице
+        //public void While()
+        //{
+        //    IWebDriver driver = null; //для защиты от бесконечного цикла добавляем параметр количества попыток
+        //    int attempt = 0; //количество попыток
+
+        //    while (driver.FindElements(By.Id("test")).Count == 0 && attempt < 60) //поиск по идентификатору (счётчик Count - сколько элементов найдено)
+        //    {
+        //        System.Threading.Thread.Sleep(1000); //Подождать 1 секунду
+        //        attempt = attempt + 1; //на каждой итерации увеличиваем количество попыток на 1
+        //        //или attempt++;
+        //    }
+
+        //    // ... (если элемент не найден - ждём 1 секунду, то повторяет снова поиск до 60 попыток, как только элемент найден Count>0, цикл прекращается и код идет дальше )
+        //}
+
+        //[TestMethod] // для C# Ожидание появления какого то элемента на странице
+        //public void While2()
+        //{
+        //    IWebDriver driver = null; //для защиты от бесконечного цикла добавляем параметр количества попыток
+        //    int attempt = 0;
+
+        //    do
+        //    {
+        //        System.Threading.Thread.Sleep(1000);
+        //        attempt++;
+        //    } while (driver.FindElements(By.Id("test")).Count == 0 && attempt < 60); //поиск по идентификатору (счётчик Count - сколько элементов найдено)
+        //} // тут проверка производится после 1 п
     }
 }
