@@ -86,7 +86,7 @@ namespace addressbook_web_tests
         public GroupsHelper SelectGroup(int index)
         {
 
-            driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
+            driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + (index+1) + "]")).Click();//Xpath начинает отсчёт от 1, а C# от 0
             return this;
         }
 

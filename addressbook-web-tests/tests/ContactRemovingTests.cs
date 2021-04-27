@@ -20,7 +20,7 @@ namespace addressbook_web_tests
                 Lastname = "Kripovyi"
             };
 
-            app.Contacts.RemoveContact(1, contact);
+            app.Contacts.RemoveContact(0, contact);
         }
     }
 }

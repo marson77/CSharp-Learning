@@ -19,7 +19,7 @@ namespace addressbook_web_tests
                 Footer = "Testmodify3"
             };
 
-            app.Groups.ModifyGroup(1, newData);
+            app.Groups.ModifyGroup(0, newData);
 
         }
 
@@ -32,7 +32,7 @@ namespace addressbook_web_tests
                 Footer = null
             };
 
-            app.Groups.ModifyGroup(1, newData);
+            app.Groups.ModifyGroup(0, newData);
         }
     }
 }

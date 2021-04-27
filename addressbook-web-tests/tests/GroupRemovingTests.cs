@@ -2,6 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace addressbook_web_tests
@@ -19,7 +20,14 @@ namespace addressbook_web_tests
                 Footer = "Testmodify3"
             };
 
-            app.Groups.RemoveGroup(1, newData);
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
+            app.Groups.RemoveGroup(0, newData);
+
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+
+            oldGroups.RemoveAt(0);
+            Assert.AreEqual(oldGroups, newGroups);
         }
     }
 }
