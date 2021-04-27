@@ -36,7 +36,7 @@ namespace addressbook_web_tests
             ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group")); // для кажого элемента в коллекции нужно выполнить какие то действия:
             foreach (IWebElement element in elements) 
             {
-                groups.Add(new GroupData(element.Text)); //текст который выидим на экране, 
+                groups.Add(new GroupData(element.Text)); //текст который видим на экране, 
             }
             return groups;
         }

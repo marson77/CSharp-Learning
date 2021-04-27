@@ -20,7 +20,14 @@ namespace addressbook_web_tests
                 Lastname = "Kripovyi"
             };
 
+            List<ContactData> oldContacts = app.Contacts.GetContactList();
+
             app.Contacts.RemoveContact(0, contact);
+
+            List<ContactData> newContacts = app.Contacts.GetContactList();
+
+            oldContacts.RemoveAt(0);
+            Assert.AreEqual(oldContacts, newContacts);
         }
     }
 }

@@ -105,6 +105,17 @@ namespace addressbook_web_tests
             return this;
         }
 
+        public List<ContactData> GetContactList()
+        {
+            List<ContactData> contact = new List<ContactData>(); // Создаем коллекцию, 
+            ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("td.center")); // для кажого элемента в коллекции нужно выполнить какие то действия:
+            foreach (IWebElement element in elements)
+            {
+                contact.Add(new ContactData(element.Text)); //текст который видим на экране, 
+            }
+            return contact;
+        }
+
         public bool ContactExist()
         {
             return IsElementPresent(By.Name("selected[]"));
