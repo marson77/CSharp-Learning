@@ -65,16 +65,17 @@ namespace addressbook_web_tests
             {
                 return true;
             }
-            return Firstname == other.Firstname;
+            return Firstname == other.Firstname && Middlename == other.Middlename;
         }
 
         public override int GetHashCode()
         {
             //return 0;//Если оптимизация сравнения не нужна
             return Firstname.GetHashCode();
+            return Middlename.GetHashCode();
         }
 
-        public override string ToString()// override - переопределяет станджартную функцию
+        public override string ToString()// override - переопределяет стандартную функцию
         {
             return "firstname=" + Firstname;
         }
@@ -88,23 +89,5 @@ namespace addressbook_web_tests
             return Firstname.CompareTo(other.Firstname);
         }
 
-        //public bool Equals2(ContactData other)
-        //{
-        //    if (object.ReferenceEquals(other, null))
-        //    {
-        //        return false;
-        //    }
-        //    if (object.ReferenceEquals(this, other))
-        //    {
-        //        return true;
-        //    }
-        //    return Middlename == other.Middlename;
-        //}
-
-        //public override int GetHashCode2()
-        //{
-        //    //return 0;//Если оптимизация сравнения не нужна
-        //    return Middlename.GetHashCode();
-        //}
     }
 }
