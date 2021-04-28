@@ -65,14 +65,13 @@ namespace addressbook_web_tests
             {
                 return true;
             }
-            return Firstname == other.Firstname && Middlename == other.Middlename;
+            return Firstname == other.Firstname;
         }
 
         public override int GetHashCode()
         {
             //return 0;//Если оптимизация сравнения не нужна
             return Firstname.GetHashCode();
-            return Middlename.GetHashCode();
         }
 
         public override string ToString()// override - переопределяет стандартную функцию
